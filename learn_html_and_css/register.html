@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head class="container">
+    <meta charset="utf-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet" />
+  </head>
+  <body>
+    <header class = "primary-header container group">
+      <h1 class="logo">
+        <a href="index.html">Styles <br /> Conference</a>
+      </h1>
+      <h3 class="tagline">August 24&ndash;26 &mdash; Hamilton, ON</h3>
+      <nav class="nav primary-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li><!---
+          ---><li><a href="speakers.html">Speakers</a></li><!---
+          ---><li><a href="schedule.html">Schedule</a></li><!---
+          ---><li><a href="venue.html">Venue</a></li><!---
+          ---><li><a href="register.html">Register</a></li>
+        </ul>
+      </nav>
+  </header>
+    <section class="row-alt">
+      <div class="lead container">
+        <h1>Register</h1>
+        <p>
+        Every year we aim to have an unbelievable time, and this year we’d love it for you to join us.
+        Conference passes only cost $99, one of the best values you’ll find.
+        </p>
+      </div>
+    </section>
+    <section class="row">
+      <div class="grid">
+        <section class="col-2-3">
+          <h2>Purchase a Conference Pass</h2>
+          <h5>$99 Per Pass</h5>
+          <p>
+            Purchase using the form to the right
+          </p>
+          <h4>Why attend?</h4>
+          <ul class="why-attend">
+            <li>
+              Over twenty world-class speakers
+            </li>
+              <li>
+                One full day of workshops and two days of presentations
+              </li>
+              <li>
+                Hosted at the Hamilton Theatre, a sketchy place
+              </li>
+              <li>
+                Hamilton in August is gross
+              </li>
+          </ul>
+        </section><!--
+        --><form class="col-1-3" action="#" method="post">
+          <fieldset class="register-group">
+            <label>Name<input type="text" name="Name" placeholder=" Full Name"/></label>
+            <label>Email<input type="email" name="email" placeholder=" Email"/></label>
+            <label>Number of Passes
+              <select>name="quantity" required
+                <option value="1" selected>1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+              </select>
+            </label>
+            <label>Comments<textarea name="comments"></textarea></label>
+          </fieldset>
+          <input class="btn btn-default" type="submit" name="submit" value="Purchase" />
+        </section>
+      </div>
+    </section>
+  </body>
+  <footer class="primary-footer container group">
+    <small>&copy; Styles Conference</small>
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Home</a></li><!---
+        ---><li><a href="speakers.html">Speakers</a></li><!---
+        ---><li><a href="schedule.html">Schedule</a></li><!---
+        ---><li><a href="venue.html">Venue</a></li><!---
+        ---><li><a href="register.html">Register</a></li>
+      </ul>
+    </nav>
+  </footer>
+</html>

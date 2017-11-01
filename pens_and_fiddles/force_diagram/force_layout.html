@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Force Layout</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #212121;
+      }
+      .node{
+        fill: #336699;
+        stroke: #fff;
+        stroke-width: 2px;
+      }
+
+      .node text {
+        font: 12px "Lato";
+        pointer-events: none;
+        letter-spacing: 1px;
+        font-weight: 100;
+      }
+
+      .link {
+        stroke: #777;
+        stroke-width: 2px;
+      }
+
+    </style>
+  </head>
+  <body>
+  </body>
+  <script src="https://d3js.org/d3.v3.min.js"></script>
+  <script>
+//https://stackoverflow.com/questions/11102795/d3-node-labeling
+    var width = 640,
+      height = 480;
+
+    var links = [
+      {source: 'Chicago', target: 'New York'},
+      {source: 'India', target: 'New York'},
+      {source: 'Chicago', target: 'India'},
+    ]
+
+    var nodes = {};
+
+    //parse links to nodes
+    links.forEach(function(link){
+      link.source = nodes[link.source] ||
+        (nodes[link.source] = {name:link.source});
+      link.target = nodes[link.target] ||
+        (nodes[link.target] = {name: link.target});
+    });
+
+    //add svg to body
+    var svg = d3.select('body').append('svg')
+      .attr('width', width)
+      .attr('height', height);
+
+    //use the force (actual constructor that creates the force layout)
+    var force = d3.layout.force()
+      .size([width, height])
+      .nodes(d3.values(nodes))
+      .links(links)
+      .on("tick", tick)
+      .linkDistance(300)
+      .start();
+
+    var link = svg.selectAll('.link')
+      .data(links)
+      .enter().append('line')
+      .attr('class', 'link');
+
+
+    var node = svg.selectAll('.node')
+      .data(force.nodes())
+      .enter().append('g')
+      .attr('class', 'node')
+      .call(force.drag);
+
+    node.append('circle')
+      .attr('r', width*0.03);
+
+    node.append('text')
+      .attr("dx", 20)
+      .attr("dy","-1em")
+      .text(function(d){
+        console.log(d.name)
+        d3.selectAll('.node text')
+          .style('fill', 'white')
+          .style('stroke', 'white')
+          .style('stroke-width', 1);
+        return d.name
+       });
+
+    function tick(e){
+      node.attr('cx', function(d){return d.x;})
+        .attr('cy', function(d){return d.y})
+        .call(force.drag);
+      link.attr('x1', function(d){return d.source.x;})
+      link.attr('y1', function(d){return d.source.y;})
+      link.attr('x2', function(d){return d.target.x;})
+      link.attr('y2', function(d){return d.target.y;})
+      node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+    }
+
+  </script>
+</html>

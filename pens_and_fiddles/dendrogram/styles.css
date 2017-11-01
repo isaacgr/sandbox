@@ -1,0 +1,33 @@
+html {
+   height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+}
+
+#container {
+  min-height: 100%;
+}
+
+.node {
+    cursor: pointer;
+  }
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-size:10px;
+  font-family: Lato;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}

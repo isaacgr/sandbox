@@ -1,0 +1,157 @@
+* http://meyerweb.com/eric/tools/css/reset/ 2. v2.0 | 20110126
+  License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*
+ ===============================
+ Custom Syles
+ ===============================
+ */
+
+body {
+  background: #16a085;
+  width: 250px;
+  height: 250px;
+}
+
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  width: 50%;
+}
+
+a:focus{
+  text-decoration: none;
+  width: 50%;
+}
+
+/*
+===============================
+Columns
+===============================
+*/
+
+.col-1-2 {
+  width: 45%;
+}
+.col-1-2 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+/*
+===============================
+Title
+===============================
+*/
+
+.title {
+  color: #ffffff;
+  text-align: center;
+  font: bold 20px "Lato", "Open Sans", "Helvetica Nue", sans-serif;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+
+/*
+===============================
+Input
+===============================
+*/
+
+.file-name {
+  margin: 0 auto;
+  font: 400 14px "Lato", "Open Sans", "Helvetica Nue", sans-serif;
+}
+
+.input-title {
+  margin: 0 auto;
+  font: 300 12px "Lato", "Open Sans", "Helvetica Nue", sans-serif;
+  color: #ffffff;
+  text-align: center;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+/*
+===============================
+Save As
+===============================
+*/
+
+#save-window,
+#save-tab,
+#save-all {
+  display: block;
+  margin: 10px auto;
+  text-transform: uppercase;
+  font-size: 10px;
+}

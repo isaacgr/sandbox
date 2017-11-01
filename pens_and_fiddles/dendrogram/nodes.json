@@ -1,0 +1,38 @@
+{
+  "name": "Core",
+  "children": [
+    {
+      "name": "First Floor",
+      "children": [
+        {
+          "name": "120 Classroom"
+        },
+        {
+          "name": "120 Conference Room"
+        }
+      ]
+    },
+    {
+      "name": "Second Floor",
+      "children": [
+        {
+          "name":"240 Classroom"
+        },
+        {
+          "name": "240 Lecture Hall"
+        }
+      ]
+    },
+    {
+      "name": "Third Floor",
+      "children": [
+        {
+          "name":"340 Classroom"
+        },
+        {
+          "name": "340 Media Room"
+        }
+      ]
+    }
+  ]
+}
