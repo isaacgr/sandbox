@@ -21,6 +21,7 @@
     "node-sass": "^4.8.3",
     "normalize.css": "7.0.0",
     "react": "16.0.0",
+    "react-d3-tree": "^1.10.4",
     "react-dom": "16.0.0",
     "react-modal": "2.2.2",
     "sass-loader": "^7.0.1",
