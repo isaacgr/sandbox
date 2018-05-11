@@ -4,19 +4,19 @@ class Display extends React.Component {
   constructor(props){
     super(props);
   }
-  onDisplayValueChange = (e) => {
+  handleValueChange = (e) => {
     const displayValue = e.target.value;
     if (!displayValue || displayValue.match(/^\d{1,}(\.\d{0,})?$/)){
-      this.props.onDisplayValueChange(displayValue);
+      this.props.handleValueChange(displayValue);
     }
-  }
+  };
   render() {
     return (
       <div>
         <input
           type='text'
           value={this.props.displayValue}
-          onChange={this.onDisplayValueChange}
+          onChange={this.handleValueChange}
         />
       </div>
     )
