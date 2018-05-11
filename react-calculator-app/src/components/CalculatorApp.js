@@ -1,6 +1,7 @@
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
+import { calculate } from '../Logic/Calculate';
 
 const operators = [
   'C', '+/-', '/',
@@ -11,19 +12,22 @@ class CalculatorApp extends React.Component {
   state = {
     displayValue: ''
   }
-  onDisplayValueChange = (displayValue) => {
+  handleValueChange = (displayValue) => {
     this.setState((prevState) => ({
       displayValue
     }));
-    console.log(displayValue);
   }
   handleButtonClick = (buttonName) => {
-    if (!isNaN(buttonName)){
+    // TODO: Make this more elegant
+    if (buttonName.match(/\d|\./)){
+      if (this.state.displayValue.includes('.') && (buttonName === '.')){
+        return
+      }
       this.setState((prevState) => ({
         displayValue: prevState.displayValue + buttonName
        }));
     } else if (operators.includes(buttonName)) {
-      console.log('will do something');
+      this.setState(() => (calculate(this.state, buttonName)));
     }
   }
   render() {
@@ -31,7 +35,7 @@ class CalculatorApp extends React.Component {
       <div>
         <Display
           displayValue={this.state.displayValue}
-          onDisplayValueChange={this.onDisplayValueChange}
+          handleValueChange={this.handleValueChange}
         />
         <ButtonPanel
           handleButtonClick={this.handleButtonClick}
