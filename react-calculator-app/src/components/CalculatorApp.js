@@ -10,7 +10,9 @@ const operators = [
 
 class CalculatorApp extends React.Component {
   state = {
-    displayValue: ''
+    displayValue: undefined,
+    nextValue: undefined,
+    total: undefined
   }
   handleValueChange = (displayValue) => {
     this.setState((prevState) => ({
@@ -20,11 +22,11 @@ class CalculatorApp extends React.Component {
   handleButtonClick = (buttonName) => {
     // TODO: Make this more elegant
     if (buttonName.match(/\d|\./)){
-      if (this.state.displayValue.includes('.') && (buttonName === '.')){
+      if ((displayValue % 1 !== 0) && (buttonName === '.')){
         return
       }
       this.setState((prevState) => ({
-        displayValue: prevState.displayValue + buttonName
+        displayValue: prevState.displayValue + parseInt(buttonName)
        }));
     } else if (operators.includes(buttonName)) {
       this.setState(() => (calculate(this.state, buttonName)));
