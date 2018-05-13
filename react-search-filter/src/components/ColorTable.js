@@ -7,7 +7,15 @@ class ColorTable extends React.Component {
   };
   render(){
     const rows = [];
+    const match = this.props.filter.match(/^[a-zA-Z]{0,}$/)
     this.props.colors.forEach((color) => {
+      if (!match){
+        return
+      }
+      
+      if (!color.color.includes(match[0])) {
+        return
+      };
       rows.push(
         <Color
           color={color}
@@ -15,21 +23,15 @@ class ColorTable extends React.Component {
           />
       );
     });
-    const filteredRows = rows.filter((row) => {
-      const match = this.props.filter.match(/^[a-z]{1,}$/);
-      if (match) {
-        return row.key.includes(match[0]);
-      }
-    });
     return (
-      <table>
+      <table className='widget__table'>
         <thead>
           <tr>
-            <th>Color</th>
-            <th>Hex Value</th>
+            <th className='widget__table--header'>Color</th>
+            <th className='widget__table--header'>Hex Value</th>
           </tr>
         </thead>
-        <tbody>{ (filteredRows.length == 0) ? rows : filteredRows}</tbody>
+        <tbody>{rows}</tbody>
       </table>
     );
   };

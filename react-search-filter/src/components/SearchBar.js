@@ -10,10 +10,13 @@ class SearchBar extends React.Component {
   };
   render(){
     return (
-      <div>
+      <div className='widget__search'>
         <input
+          className='widget__search--input'
           type='text'
           placeholder='Search...'
+          onFocus={(e) => {e.target.placeholder=''}}
+          onBlur={(e) => {e.target.placeholder='Search...'}}
           value={this.props.searchText}
           onChange={this.handleOnChange}
           >

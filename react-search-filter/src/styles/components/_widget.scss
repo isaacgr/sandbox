@@ -1,0 +1,41 @@
+/*Widget*/
+
+.widget {
+}
+
+/*Widget Elements*/
+.widget__table {
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+.widget__search {
+  text-align: center;
+  padding: $l-size 0;
+}
+
+.widget__search--input {
+  background-color: #B3E5FC;
+  text-align: center;
+  color: #757575;
+  border: 1px solid #BDBDBD;
+  border-radius: 5px;
+  font-size: $l-size;
+  &:focus {
+    outline: none;
+  }
+}
+
+/*Widget Modifiers*/
+.widget__table--header {
+  font-size: $l-size;
+  color: #212121;
+  padding: 0 $xl-size;
+}
+
+.widget__table--data {
+  color: #FFFFFF;
+  font-family: 'Lato Light';
+  padding: $m-size 0;
+}

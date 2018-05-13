@@ -16,15 +16,17 @@ class FilterableColorTable extends React.Component {
   }
   render() {
     return (
-      <div>
-        <SearchBar
-          searchText={this.state.searchText}
-          handleOnChange={this.handleOnChange}
-        />
-        <ColorTable
-          colors={this.props.colors}
-          filter={this.state.searchText}
-        />
+      <div className='container'>
+        <div className='widget'>
+          <SearchBar
+            searchText={this.state.searchText}
+            handleOnChange={this.handleOnChange}
+          />
+          <ColorTable
+            colors={this.props.colors}
+            filter={this.state.searchText}
+          />
+        </div>
       </div>
     );
   };

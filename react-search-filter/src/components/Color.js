@@ -2,9 +2,9 @@ import React from 'react';
 
 const Color = (props) => {
   return (
-    <tr style={{color: props.color.code.hex}}>
-      <td>{props.color.color}</td>
-      <td>{props.color.code.hex}</td>
+    <tr>
+      <td className='widget__table--data'>{props.color.color}</td>
+      <td className='widget__table--data'>{props.color.code.hex}</td>
     </tr>
   );
 }
